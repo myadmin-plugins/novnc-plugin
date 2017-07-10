@@ -17,8 +17,8 @@ class Plugin {
 
 	public static function getHooks() {
 		return [
-			'system.settings' => [__CLASS__, 'getSettings'],
-			'ui.menu' => [__CLASS__, 'getMenu'],
+			//'system.settings' => [__CLASS__, 'getSettings'],
+			//'ui.menu' => [__CLASS__, 'getMenu'],
 		];
 	}
 
