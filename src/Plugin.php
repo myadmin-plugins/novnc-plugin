@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\GenericEvent;
 class Plugin {
 
 	public static $name = 'Novnc Plugin';
-	public static $description = 'Allows handling of Novnc emails and honeypots';
+	public static $description = 'Allows handling of NoVNC HTML5 VNC Connections';
 	public static $help = '';
 	public static $type = 'plugin';
 
