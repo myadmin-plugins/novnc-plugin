@@ -24,5 +24,5 @@ composer require detain/myadmin-novnc-plugin
 
 ## License
 
-The Novnc handling plugin for MyAdmin class is licensed under the LGPL-v2 license.
+The Novnc handling plugin for MyAdmin class is licensed under the LGPL-v2.1 license.
 
