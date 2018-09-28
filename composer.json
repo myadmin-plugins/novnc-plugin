@@ -1,5 +1,5 @@
 {
-	"name": "detain/myadmin-novnc-plugin",
+	"name": "detain/novnc-plugin",
 	"type": "myadmin-plugin",
 	"description": "Novnc handling plugin for MyAdmin",
 	"keywords": [
