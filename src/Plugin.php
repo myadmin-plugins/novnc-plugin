@@ -54,10 +54,10 @@ class Plugin
 	public static function getRequirements(GenericEvent $event)
 	{
 		$loader = $event->getSubject();
-		$loader->add_requirement('class.Novnc', '/../vendor/detain/novnc-plugin/src/Novnc.php');
-		$loader->add_requirement('deactivate_kcare', '/../vendor/detain/novnc-plugin/src/abuse.inc.php');
-		$loader->add_requirement('deactivate_abuse', '/../vendor/detain/novnc-plugin/src/abuse.inc.php');
-		$loader->add_requirement('get_abuse_licenses', '/../vendor/detain/novnc-plugin/src/abuse.inc.php');
+		$loader->add_requirement('class.Novnc', '/../vendor/detain/myadmin-novnc-plugin/src/Novnc.php');
+		$loader->add_requirement('deactivate_kcare', '/../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php');
+		$loader->add_requirement('deactivate_abuse', '/../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php');
+		$loader->add_requirement('get_abuse_licenses', '/../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php');
 	}
 
 	/**
