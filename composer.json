@@ -1,40 +1,46 @@
 {
 	"name": "detain/myadmin-novnc-plugin",
 	"type": "myadmin-plugin",
-	"description": "Novnc handling plugin for MyAdmin",
+	"description": "NoVNC HTML5 VNC connection handling plugin for the MyAdmin control panel framework",
 	"keywords": [
-		"abuse",
-		"administration",
-		"spam"
+		"novnc",
+		"vnc",
+		"html5",
+		"remote-desktop",
+		"myadmin",
+		"plugin"
 	],
 	"license": "LGPL-2.1-only",
 	"authors": [
 		{
 			"name": "Joe Huss",
-			"homepage": "https:\/\/my.interserver.net\/"
+			"homepage": "https://my.interserver.net/"
 		}
 	],
 	"config": {
-		"bin-dir": "vendor\/bin",
-		"minimum-stability": "dev"
+		"bin-dir": "vendor/bin",
+		"minimum-stability": "dev",
+		"allow-plugins": {
+			"detain/myadmin-plugin-installer": true
+		}
 	},
 	"require": {
-		"php": ">=5.0.0",
+		"php": ">=8.2",
 		"ext-soap": "*",
-		"symfony/event-dispatcher": "^5.0@stable",
+		"symfony/event-dispatcher": "^5.0||^6.0||^7.0",
 		"detain/myadmin-plugin-installer": "dev-master"
-    },
+	},
 	"require-dev": {
-		"phpunit/phpunit": "*",
-		"phpunit/phpunit-mock-objects": "*",
-		"vlucas/phpdotenv": "*",
-		"codeclimate/php-test-reporter": "dev-master",
-		"satooshi/php-coveralls": "*",
-		"codacy/coverage": "dev-master"
+		"phpunit/phpunit": "^9.6"
 	},
 	"autoload": {
 		"psr-4": {
 			"Detain\\MyAdminNovnc\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Detain\\MyAdminNovnc\\Tests\\": "tests/"
 		}
 	}
 }
