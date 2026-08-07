@@ -65,7 +65,7 @@ class Plugin {
 - `getRequirements()` calls `$loader->add_requirement()` for each required file
 - ACL checks via `has_acl()` after `function_requirements('has_acl')` in `getMenu()`
 - Tabs for indentation (see `.scrutinizer.yml` coding style)
-- PHP >= 7.4, `ext-soap` required
+- PHP >= 8.2 (raised from 7.4 per plugin-plan D8; CI already ran 8.2/8.3/8.4), `ext-soap` required
 - LGPL-2.1-only license
 
 <!-- caliber:managed:pre-commit -->
