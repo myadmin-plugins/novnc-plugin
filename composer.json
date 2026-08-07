@@ -17,9 +17,10 @@
 			"homepage": "https://my.interserver.net/"
 		}
 	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
 	"config": {
 		"bin-dir": "vendor/bin",
-		"minimum-stability": "dev",
 		"allow-plugins": {
 			"detain/myadmin-plugin-installer": true
 		}
@@ -41,6 +42,20 @@
 	"autoload-dev": {
 		"psr-4": {
 			"Detain\\MyAdminNovnc\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"myadmin-deferred-contract-defects": {
+			"B-10": {
+				"until": "2026-11-30",
+				"issue": "plugin_plan.md Phase 5, Bucket 1 (scaffold-copied abuse.inc.php family)",
+				"findings": [
+					"requirement \"class.Novnc\" registers /../vendor/detain/myadmin-novnc-plugin/src/Novnc.php",
+					"requirement \"deactivate_kcare\" registers /../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php",
+					"requirement \"deactivate_abuse\" registers /../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php",
+					"requirement \"get_abuse_licenses\" registers /../vendor/detain/myadmin-novnc-plugin/src/abuse.inc.php"
+				]
+			}
 		}
 	}
 }
