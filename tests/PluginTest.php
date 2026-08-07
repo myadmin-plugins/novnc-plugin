@@ -5,34 +5,26 @@ declare(strict_types=1);
 namespace Detain\MyAdminNovnc\Tests;
 
 use Detain\MyAdminNovnc\Plugin;
-use MyAdmin\Plugins\Testing\DeferredContractDefects;
 use MyAdmin\Plugins\Testing\PluginContractTestCase;
 
 /**
  * Contract assertions for the NoVNC plugin.
  *
  * ---------------------------------------------------------------------------------
- * THE DEFERRED B-10 FAILURE
+ * THE B-10 DEFERRAL, NOW RETIRED
  * ---------------------------------------------------------------------------------
- * This package registers four requirement paths — `class.Novnc` at `src/Novnc.php`, and
- * `deactivate_kcare` / `deactivate_abuse` / `get_abuse_licenses` at `src/abuse.inc.php` —
- * and neither of those files has ever existed here. They are scaffold copy-paste from
- * `myadmin-abuse-plugin`, they belong to plugin-plan Phase 5 Bucket 1 (the
- * `deactivate_kcare` / `deactivate_abuse` / `get_abuse_licenses` family), and Bucket 1 has
- * to be fixed as one fleet-wide change: `Loader::add_requirement()` is last-write-wins, so
- * fixing one repo only moves which package wins.
+ * This package used to register four requirement paths — `class.Novnc` at `src/Novnc.php`,
+ * and `deactivate_kcare` / `deactivate_abuse` / `get_abuse_licenses` at `src/abuse.inc.php`
+ * — and neither file had ever existed here. They were scaffold copy-paste from
+ * `myadmin-abuse-plugin`. Because `Loader::add_requirement()` is last-write-wins, fixing one
+ * repo would only have moved which package won, so the failures were *recorded* rather than
+ * fixed during the harness conversion, as data in `composer.json` under
+ * `extra.myadmin-deferred-contract-defects`.
  *
- * The four failures are therefore *recorded* rather than fixed here, so the harness
- * conversion stays reviewable on its own. The record is data in this package's
- * `composer.json` under `extra.myadmin-deferred-contract-defects`; the mechanism that
- * enforces it — expiry, exact fingerprints, no additional finding of any severity riding
- * along, and staleness however the failures go away — is
- * {@see \MyAdmin\Plugins\Testing\DeferredContractDefects}, shared by the whole fleet. The
- * deferral is disclosed in the fleet triage matrix's Deferrals section as well as here, and
- * it does **not** turn the matrix cell green: `docs/phase2-triage-matrix.md` still reports
- * B-10 as failing for this package.
- *
- * Delete the `extra` block and the `use` below as part of the Phase 5 fix.
+ * Phase 5 Bucket 1 deleted all 44 of those registrations across 11 packages as one change,
+ * so the deferral, its `composer.json` block and the `DeferredContractDefects` trait are all
+ * gone from this repo. B-10 now passes on its own terms: every source this plugin registers
+ * resolves to a file that exists, because it registers none.
  *
  * ---------------------------------------------------------------------------------
  * WHAT HAPPENED TO THE OLD TESTS
@@ -49,8 +41,6 @@ use MyAdmin\Plugins\Testing\PluginContractTestCase;
  */
 class PluginTest extends PluginContractTestCase
 {
-    use DeferredContractDefects;
-
     /** @return string */
     protected function pluginClass()
     {
@@ -64,10 +54,10 @@ class PluginTest extends PluginContractTestCase
      * conditional on the registration existing, so getHooks() can change freely without
      * the suite noticing. $type is read by the harness but never pinned.
      *
-     * Both entries in getHooks() are commented out, so this plugin registers nothing and
-     * its four requirement registrations are unreachable. Pinning the empty table keeps
-     * that a deliberate, visible fact rather than something that quietly drifted -- and
-     * makes the Phase 5 fix, whichever direction it goes, show up here as a failure.
+     * Both entries in getHooks() are commented out, so this plugin registers nothing at all
+     * -- which is also why its four dead requirement registrations were unreachable, and why
+     * deleting them in Phase 5 changed no behaviour here. Pinning the empty table keeps that
+     * a deliberate, visible fact rather than something that quietly drifted.
      *
      * @return void
      */
