@@ -1,6 +1,6 @@
 ---
 name: plugin-test
-description: Writes PHPUnit 9.x tests in `tests/PluginTest.php` following the existing test class structure under namespace `Detain\MyAdminNovnc\Tests`. Use when user says 'add test', 'write test', 'test the plugin', or adds new methods to `src/Plugin.php`. Do NOT use for integration tests or tests outside the `tests/` directory. NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Writes PHPUnit 9.x tests in `tests/PluginTest.php` following the existing test class structure under namespace `Detain\MyAdminNovnc\Tests`. Use when user says 'add test', 'write test', 'test the plugin', or adds new methods to `src/Plugin.php`. Do NOT use for integration tests or tests outside the `tests/` directory. For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file

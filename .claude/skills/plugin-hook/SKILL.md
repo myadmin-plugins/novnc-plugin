@@ -1,6 +1,6 @@
 ---
 name: plugin-hook
-description: Adds a new event hook to the MyAdmin NoVNC plugin system. Registers the hook in `getHooks()` and implements the corresponding static handler method on `Plugin` in `src/Plugin.php`. Use when user says 'add hook', 'register event', 'handle event', or needs to respond to a new MyAdmin event. Do NOT use for modifying `getMenu()` or `getRequirements()` — those have dedicated patterns. NOTE: for a plugin's contract/behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
+description: Adds a new event hook to the MyAdmin NoVNC plugin system. Registers the hook in `getHooks()` and implements the corresponding static handler method on `Plugin` in `src/Plugin.php`. Use when user says 'add hook', 'register event', 'handle event', or needs to respond to a new MyAdmin event. Do NOT use for modifying `getMenu()` or `getRequirements()` — those have dedicated patterns. For a plugin's contract or behavioral tests (tests/ContractTest.php, the shared harness, composer myadmin:scaffold-tests) use the plugin-contract-tests skill instead — this skill's reflection-only guidance predates that harness.
 ---
 <!-- myadmin-contract-harness-notice -->
 > ### ⚠️ Read this before the rest of the file
