@@ -29,7 +29,7 @@
 		"php": ">=8.2",
 		"ext-soap": "*",
 		"symfony/event-dispatcher": "^5.0||^6.0||^7.0",
-		"detain/myadmin-plugin-installer": "dev-feature/plugin-contract-testcase"
+		"detain/myadmin-plugin-installer": "^2.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "^9.6"
