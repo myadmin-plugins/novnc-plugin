@@ -68,7 +68,6 @@ class Plugin {
 - PHP >= 8.2 (raised from 7.4 per plugin-plan D8; CI already ran 8.2/8.3/8.4), `ext-soap` required
 - LGPL-2.1-only license
 
-<!-- caliber:managed:pre-commit -->
 ## Plugin contract harness
 
 This package is on the shared contract harness from `detain/myadmin-plugin-installer`.
@@ -91,6 +90,7 @@ contract class primes constants and calls `register_module()`, neither of which 
 See the `plugin-contract-tests` skill for the full workflow, and `docs/testing-harness.md` in
 the installer.
 
+<!-- caliber:managed:pre-commit -->
 ## Before Committing
 
 **IMPORTANT:** Before every git commit, you MUST ensure Caliber syncs agent configs with the latest code changes.
